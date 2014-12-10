@@ -128,7 +128,6 @@ if [ -e "$DEPLOYMENT_TARGET/bower.json" ]; then
 fi
 
 # 5. Run grunt
-<<<<<<< HEAD
 # if [ -e "$DEPLOYMENT_TARGET/Gruntfile.js" ]; then
 #   cd "$DEPLOYMENT_TARGET"
 #   eval $NPM_CMD install grunt-cli
@@ -146,6 +145,7 @@ if [ -e "$DEPLOYMENT_TARGET/Gruntfile.js" ]; then
   exitWithMessageOnError "grunt failed"
   cd - > /dev/null
 fi
+
 
 # Post deployment stub
 if [[ -n "$POST_DEPLOYMENT_ACTION" ]]; then
