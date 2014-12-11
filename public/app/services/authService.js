@@ -27,7 +27,6 @@ angular.module('app.authFact', [])
 		}).then(function(res){
 			loggedInUser[0] = false;
 			console.log('logged out');
-			$location.url("/login");
 		});
 	};
 
