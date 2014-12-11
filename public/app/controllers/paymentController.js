@@ -1,4 +1,5 @@
-  angular.module('app.payment', [])
+angular.module('app.payment', [])
+
 .controller('paymentController', function(goalsService, $scope, $rootScope){
   
   $scope.setupPayment = function () {}
