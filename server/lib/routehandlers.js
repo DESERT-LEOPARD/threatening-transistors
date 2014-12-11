@@ -32,6 +32,7 @@ exports.logout = function (req, res) {
       req.logout();
       res.send('loggedOut')
   });
+
 };
 
 exports.getGoals = function (req, response) {
