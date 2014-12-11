@@ -30,7 +30,10 @@ exports.logout = function (req, res) {
       req.logout();
       res.send('loggedOut')
   });
+<<<<<<< HEAD
 
+=======
+>>>>>>> began payments
 };
 
 exports.getGoals = function (req, response) {

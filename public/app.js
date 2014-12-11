@@ -2,11 +2,9 @@
 *  Setup for app main and ui-router routes *
 *******************************************/
 
-<<<<<<< HEAD
-angular.module('app', ['ui.router', 'app.signup', 'app.login', 'app.add', 'app.goals','app.logout',  'app.authFact',   'app.goalFact'])
-=======
+
 angular.module('app', ['ui.router', 'app.signup', 'app.login', 'app.add', 'app.goals','app.logout', 'app.authFact',   'app.goalFact'])
->>>>>>> logout
+
 .config(function($stateProvider, $urlRouterProvider) {
 
 
@@ -29,6 +27,10 @@ angular.module('app', ['ui.router', 'app.signup', 'app.login', 'app.add', 'app.g
       "goalsList": {
         templateUrl: "/app/views/goalsView.template.html",
         controller: "goalsListController"
+      },
+      "payment": {
+        templateUrl: "app/views/paymentView.template.html",
+        controller: "paymentController"
       }
     }
   })
@@ -50,7 +52,6 @@ angular.module('app', ['ui.router', 'app.signup', 'app.login', 'app.add', 'app.g
       }
     }
   })
-<<<<<<< HEAD
   .state('root', {
     url: '/',
     views: {
@@ -61,7 +62,5 @@ angular.module('app', ['ui.router', 'app.signup', 'app.login', 'app.add', 'app.g
   });
 });
 
-=======
   
-});
->>>>>>> logout
+// });

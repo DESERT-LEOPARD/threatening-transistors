@@ -71,6 +71,22 @@
       </div>
     </div>
 
+		<!-- spacers to separate nav from content -->
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
+		<!-- main layout grid -->
+		<main class="ui page grid" id="goalsPage">
+		        <div class="row">
+		            <div class="center aligned column">
+		            	<!-- primary dashboard views, from ui-router -->
+		            	<div ui-view="authPane"></div>
+						<div ui-view="addGoal"></div>
+  					<div class="payments" ui-view="payment" ng-controller="paymentController"></div>
+						<div class="ui hidden divider"></div>
+						<div ui-view="goalsList"></div>
+		            </div>
+		        </div>
+		</main>
 		<!-- angular and additional js files here... -->
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="bower_components/angular/angular.min.js"></script>
@@ -93,6 +109,7 @@
 		<script src="app/controllers/goalsListController.js"></script>
 		<script src="app/controllers/loginController.js"></script>
 		<script src="app/controllers/signupController.js"></script>
+		<script src="app/controllers/paymentController.js"></script>
 
 	</body>
 </html>
