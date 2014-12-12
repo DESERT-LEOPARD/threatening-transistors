@@ -91,14 +91,30 @@ div#friendsList.ui.form >label {
   height: 95vh;
   background-image: url('../images/flock.jpg');
 }
-.mapdiv {
-  height: 100vh;
+.mapfont {
+  padding-right: 20px;
+  font-size: 100px;
+  font-weight: bold;
+  color: #ffffff;
 }
-.map {
+.mapdiv {
+  /*display: none;*/
+  height: 100vh;
+  background-image: url('../images/mountain.jpg');
+  /*opacity: 0.8;*/
+}
+ui.image.map {
+  display: none;
   height: 75%;
   width: 75%;
+  opacity: 0.6;
 }
-
+.herdfont {
+  padding-left: 20px;
+  font-size: 100px;
+  font-weight: bold;
+  color: #ffffff;
+}
 .footer {
   margin-top: -100px;
   height: 100px;
