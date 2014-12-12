@@ -48,18 +48,23 @@ exports.getGoals = function (req, response) {
 exports.getAllGoals = function (req, response) {
   Goal.find().exec(function(err, result) {
       if (!err) {
-        var data = [];
-        result.forEach(function(el){
-          if(el.goals[0]){
-            data.push(el.goals[0].content);
-          }
-        });
-        console.log(data);
-        response.send(data);
+
+        response.send(result);
       } else {
         console.log('err');
       }
     });
+};
+
+exports.addMotivate = function(req, response){
+  var goalData = req.body;
+  Goal.findOne({'userId': goalData[1]}, function(err, match){
+    if(!err){
+      console.log(match)
+    } else {
+      console.log(err);
+    }
+  });
 };
 
 exports.removeGoal = function (req, res) {
@@ -153,6 +158,7 @@ exports.addGoal = function (req, res) {
   var goalData = req.body;
   var name = req.session.name;
   var email = req.session.email;
+  goalData.motivation = 0;
   //check to see if user is already in goal database (has already saved at least one goal)
   Goal.findOne({'userId': req.session.passport.user}, function(err, userGoalList){
 

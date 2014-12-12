@@ -71,6 +71,7 @@ app.get('/logout', handler.logout);
 app.get('/goals',  handler.getGoals);
 app.get('/allGoals', handler.getAllGoals);
 app.post('/goals',  handler.addGoal, handler.getGoals);
+app.post('/addMotivate', handler.addMotivate);
 app.delete('/goals/:id',  handler.removeGoal)
 
 
