@@ -5,7 +5,8 @@
 angular.module('app', ['ui.router', 'app.signup', 'app.login', 'app.add', 'app.goals','app.logout',  'app.authFact',   'app.goalFact'])
 .config(function($stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.otherwise("/login");
+
+  $urlRouterProvider.otherwise("/");
 
 	$stateProvider
   .state('addGoalState', {
@@ -45,5 +46,14 @@ angular.module('app', ['ui.router', 'app.signup', 'app.login', 'app.add', 'app.g
       }
     }
   })
-  
+
+  .state('root', {
+    url: '/',
+    views: {
+      'landingPage': {
+        templateUrl: '/app/views/root.template.html'
+      }
+    }
+  });
 });
+
