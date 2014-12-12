@@ -39,6 +39,15 @@ angular.module('app.goalFact', [])
     });
   };
 
+  var addMotivate = function(gid){
+    console.log('adding motivation..');
+    return $http({
+      method: 'POST',
+      url: '/addMotivate',
+      data: gid
+    });
+  };
+
 	var deleteGoal = function(goalID, callback){
 		console.log("deleting goal: " + goalID);
 		// delete payment schedule
@@ -59,6 +68,7 @@ angular.module('app.goalFact', [])
 		createGoal: createGoal,
 		getGoals: getGoals,
     getAllGoals: getAllGoals,
-		deleteGoal: deleteGoal
+		deleteGoal: deleteGoal,
+    addMotivate: addMotivate
 	};
 });
