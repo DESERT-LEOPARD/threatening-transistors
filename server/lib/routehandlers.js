@@ -6,7 +6,7 @@ var Goal = require('../models/goal.js')
 var db = require('../config.js');
 var Goal = require('../models/goal.js');
 var emailHandler = require('./emailHandler.js');
-var request = require('request')
+var request = require('request');
 
 
 
@@ -39,6 +39,23 @@ exports.getGoals = function (req, response) {
   Goal.find({userId: req.session.passport.user}).exec(function(err, result) {
       if (!err) {
         response.send(result)
+      } else {
+        console.log('err');
+      }
+    });
+};
+
+exports.getAllGoals = function (req, response) {
+  Goal.find().exec(function(err, result) {
+      if (!err) {
+        var data = [];
+        result.forEach(function(el){
+          if(el.goals[0]){
+            data.push(el.goals[0].content);
+          }
+        });
+        console.log(data);
+        response.send(data);
       } else {
         console.log('err');
       }

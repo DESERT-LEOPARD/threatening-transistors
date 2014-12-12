@@ -29,7 +29,17 @@ angular.module('app.goalFact', [])
 		});
 	};
 
-	var deleteGoal = function(goalID, callback){	
+  var getAllGoals = function(user){
+    console.log("gettin all yer goals");
+    return $http({
+      method: 'GET',
+      url: '/allGoals'
+    }).then(function(res){
+      return res.data;
+    });
+  };
+
+	var deleteGoal = function(goalID, callback){
 		console.log("deleting goal: " + goalID);
 		// delete payment schedule
 		return $http({
@@ -48,6 +58,7 @@ angular.module('app.goalFact', [])
 	return {
 		createGoal: createGoal,
 		getGoals: getGoals,
+    getAllGoals: getAllGoals,
 		deleteGoal: deleteGoal
 	};
 });

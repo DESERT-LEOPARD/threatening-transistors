@@ -69,9 +69,10 @@ app.get('/logout', handler.logout);
 
 
 app.get('/goals',  handler.getGoals);
+app.get('/allGoals', handler.getAllGoals);
 app.post('/goals',  handler.addGoal, handler.getGoals);
 app.delete('/goals/:id',  handler.removeGoal)
 
 
 /****** module.exports *********/
-module.exports = app
+module.exports = app;
