@@ -3,7 +3,7 @@
 *******************************************/
 
 
-angular.module('app', ['ui.router', 'app.signup', 'app.login', 'app.add', 'app.goals','app.logout',  'app.authFact',   'app.goalFact'])
+angular.module('app', ['ui.router', 'app.signup', 'app.login', 'app.add', 'app.goals', 'app.logout',  'app.authFact', 'app.goalFact'])
 .config(function($stateProvider, $urlRouterProvider) {
 
 
@@ -39,11 +39,20 @@ angular.module('app', ['ui.router', 'app.signup', 'app.login', 'app.add', 'app.g
     }
   })
   .state('signupState', {
-    url:'/signup',
+    url: '/signup',
     views: {
       'authPane': {
         templateUrl: '/app/views/signupView.template.html',
         controller: 'signupController'
+      }
+    }
+  })
+  .state('allGoals', {
+    url: '/allgoals',
+    views: {
+      'allGoals': {
+        templateUrl: '/app/views/allGoals.template.html',
+        controller: 'goalsListController'
       }
     }
   })

@@ -21,6 +21,15 @@ angular.module('app.goals', [])
     }
 	}
 
+  $scope.getAllGoals = function(){
+   $scope.data.goalsList = goalsList;
+   goalsService.getAllGoals().then(function(data){
+    console.log('all da goals', data);
+     $scope.data.goalsList = data;
+     console.log('all goals',JSON.stringify(data[0]['goals']));
+   });
+  }
+
 	//Shows success dimmer flash and then deletes goal when the user clicks "I did it"
 
 	$scope.celebrateSuccess = function(event){
