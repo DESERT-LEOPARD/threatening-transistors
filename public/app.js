@@ -47,6 +47,7 @@ angular.module('app', ['ui.router', 'app.signup', 'app.login', 'app.add', 'app.g
       }
     }
   })
+
   .state('root', {
     url: '/',
     views: {
@@ -57,5 +58,4 @@ angular.module('app', ['ui.router', 'app.signup', 'app.login', 'app.add', 'app.g
   });
 });
 
-  
-// });
+
