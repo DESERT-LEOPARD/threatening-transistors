@@ -95,7 +95,6 @@ exports.payments = function (req, res) {
 }
 
 exports.schedulePay = function (req, res) {
-
   var amount = req.body.amount;
   var receiverId = req.body.receiverID;
   var date = req.body.date
@@ -106,7 +105,6 @@ exports.schedulePay = function (req, res) {
     note: 'I did not meet my goal on time :(',
     amount: amount
   }
-
   var j = schedule.scheduleJob(date, function(){
     request.post(
       'https://api.venmo.com/v1/payments',
@@ -117,10 +115,8 @@ exports.schedulePay = function (req, res) {
         }
     });
   });
-
-res.send('payment scheduled');
+  res.send('payment scheduled');
 }
-
 
 exports.getFriends = function (req, res) {
   var requestURL = 'https://api.venmo.com/v1/users/' + req.session.venmoID + '/friends?access_token=' + req.session.accessToken + '&&limit=300';

@@ -40,51 +40,15 @@ $(document).ready(function () {
     $('.dropdown').dropdown()}, 2000);
 })
 
-    <script src='https://platform.venmo.com/sdk.js'></script>
-<div class="ui right labeled teal icon button">
- <a class='venmoAuth' href="https://api.venmo.com/v1/oauth/authorize?client_id=2195&scope=make_payments%20access_profile%20access_friends&response_type=code"> Allow Venmo to incentivise me to stick to my goals </a> 
-    </div>
 
-<a class="venmo-pay-button" data-recipient-id="1397129314566144218" data-amount='5.00'/>
-<div class="ui form">
-  <div class="field">
-  <p> {{venmoFriends[0].display_name}} </p>
-    <label>Friends</label>
-    <select class="ui search dropdown">
-      <option ng-repeat=' friend in venmoFriends'>{{friend.display_name}}</option>
+    <select ng-model="selectedDrop" class="ui search dropdown">
+      <option  ng-repeat='friend in venmoFriends' value='{{friend.display_name}}' >{{friend.display_name}}</option>
     </select>
   </div>
 </div>
+{{selectedDrop}}
 <script>
-$('.ui.dropdown')
-  .dropdown()
-;
+  setTimeout(function () {
+    $('.dropdown').dropdown()}, 2000);
 </script>
 </div>
-
-
-<!---To dos 
-http://inspiherd.azurewebsites.net/?access_token=h5d9q4JaASFyBRyRhrPeeK7L4p7q8Beb#/profile
-On click, show button with payment amount
-add payment number as a data field to goal
-if there is a payment in there, schedule payment on server sid
-
-
-
--->
-
-  <h5 class="ui header">Privacy</h5>
-  <div class="field">
-    <div class="ui toggle checkbox">
-      <input type="radio" name="privacy">
-      <label>Allow <b>anyone</b> to see my account</label>
-    </div>
-  </div>
-  <div class="field">
-    <div class="ui toggle checkbox">
-      <input type="radio" name="privacy">
-      <label>Allow <b>only friends</b> to see my account</label>
-    </div>
-  </div>
-</div>
-
