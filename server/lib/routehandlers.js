@@ -32,10 +32,6 @@ exports.logout = function (req, res) {
       req.logout();
       res.send('loggedOut')
   });
-<<<<<<< HEAD
-
-=======
->>>>>>> began payments
 };
 
 exports.getGoals = function (req, response) {
@@ -77,6 +73,7 @@ var headers = {
 };
 
 exports.payments = function (req, res) {
+
   request.post(
     'https://api.venmo.com/v1/oauth/access_token',
     { form: {"client_id": 2195,
