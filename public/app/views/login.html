@@ -6,34 +6,27 @@
 		<link href="bower_components/semantic-ui/dist/components/sidebar.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="bower_components/pickadate/lib/themes/default.css">
 		<link rel="stylesheet" href="bower_components/pickadate/lib/themes/default.date.css">
-		<link rel="stylesheet" href="styles/custom-styles.css" >
+		<link href="styles/custom-styles.css" rel="stylesheet">
 	</head>
 	<body>
-
-    <!-- template partial for the navbar up top-->
+		<!-- template partial for the navbar up top-->
 		<ng-include src="'app/views/partials/navbar.html'">
 		</ng-include>
-
-    <!-- spacers to separate nav from content -->
-    <div class="ui hidden divider"></div>
-    <!-- <div class="ui hidden divider"></div> -->
-    <!-- main layout grid -->
-    <div ui-view="landingPage" id="landingPage"></div>
-    <main class="ui page grid">
-            <div class="row">
-                <div class="center aligned column">
-                  <!-- primary dashboard views, from ui-router -->
-                  <br>
-                  <div ui-view="authPane"></div>
-            <div ui-view="addGoal"></div>
-            <div class="ui hidden divider"></div>
-            <div ui-view="goalsList"></div>
-                </div>
-            </div>
-    </main>     
-    <div class="ui inverted center aligned vertical segment footer">
-      <h1 class="ui header">footer</h1>
-    </div>		
+		<!-- spacers to separate nav from content -->
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
+		<!-- main layout grid -->
+		<main class="ui page grid">
+		        <div class="row">
+		            <div class="center aligned column">
+		            	<!-- primary dashboard views, from ui-router -->
+		            	<div ui-view="authPane"></div>
+						<div ui-view="addGoal"></div>
+						<div class="ui hidden divider"></div>
+						<div ui-view="goalsList"></div>
+		            </div>
+		        </div>
+		</main>
 		<!-- angular and additional js files here... -->
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="bower_components/angular/angular.min.js"></script>
@@ -44,8 +37,6 @@
 		<!-- pickadate -->
 		<script src="bower_components/pickadate/lib/picker.js"></script>
 		<script src="bower_components/pickadate/lib/picker.date.js"></script>
-		<script src="bower_components/moment/min/moment.min.js"></script>
-
 
 		<!-- our app -->
 		<script src="app.js"></script>
@@ -53,11 +44,9 @@
 		<script src="app/services/goalsService.js"></script>
 		<script src="app/services/authService.js"></script>
 		<!-- controllers -->
-		<script src="app/controllers/logoutController.js"></script>
 		<script src="app/controllers/addGoalController.js"></script>
 		<script src="app/controllers/goalsListController.js"></script>
 		<script src="app/controllers/loginController.js"></script>
 		<script src="app/controllers/signupController.js"></script>
-
 	</body>
 </html>

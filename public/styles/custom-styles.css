@@ -1,5 +1,6 @@
 body {
 	padding-top: 2px;
+  background-color: rgba(0,0,0,.9);
 }
 
 
@@ -85,4 +86,20 @@ div#friendsList.ui.form >label {
     display: block;
     width: 40%;
     height: auto;
+}
+.flock {
+  height: 95vh;
+  background-image: url('../images/flock.jpg');
+}
+.mapdiv {
+  height: 100vh;
+}
+.map {
+  height: 75%;
+  width: 75%;
+}
+
+.footer {
+  margin-top: -100px;
+  height: 100px;
 }
