@@ -1,12 +1,18 @@
-  <div class="ui inverted center aligned blue vertical segment">
+  <div class="ui inverted right aligned horizontal segment">
     <br>
-    <div class="column">
-      <h1 class="ui inverted header">Be Inspired</h1>
-      <p>Active goal setters</p>
-        <img src="../images/USmap.svg" class="ui image map">
-      </div>
-  </div>
-  <div class="ui inverted center aligned vertical segment flock">
-    <h1 class="ui header">Be Herded</h1>
+      <div class="mapdiv">
+          <div class="mapfont">Be Inspired</div>
+          <!-- <p>Active goal setters</p> -->
+          <img src="../images/USmap.svg" class="ui image map" style="display:none">
+        </div>
+    </div>
+  <div class="ui inverted left aligned vertical segment flock">
+    <div class="herdfont">Be Herded</div>
   </div>
 </div>
+
+ <script type="text/javascript">
+  $(document).ready(function(){
+      $('img.ui.image.map').transition('fade down', '1500ms');
+    })
+   </script>
