@@ -22,7 +22,10 @@ aside {
   float: left;
   display: inline-block;
 }
-.flock {
+
+a.venmoAuth {
+  color: white;
+}.flock {
   height: 95vh;
   background-image: url('../images/flock.jpg');
 }
