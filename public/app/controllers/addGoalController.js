@@ -207,10 +207,6 @@ angular.module('app.add', [])
    console.log($scope.venmoFriends);
   }
 
-  $scope.runScript = function () {
-
-  }
-
   $scope.schedulePay = function (amount, id) {
 
     // var date = moment($scope.picker.get('select').obj).format('L').split('/').join(' ')
@@ -227,6 +223,7 @@ angular.module('app.add', [])
     });
   }
 
+
   $scope.$on('$viewContentLoaded', function(){
     
     var $input = $('.datepicker').pickadate();
@@ -234,7 +231,6 @@ angular.module('app.add', [])
 
 
   });
-
 
 });
 
