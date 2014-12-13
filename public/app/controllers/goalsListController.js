@@ -21,6 +21,26 @@ angular.module('app.goals', [])
     }
 	}
 
+  $scope.getAllGoals = function(){
+   // $scope.data.goalsList = goalsList;
+    goalsService.getAllGoals().then(function(data){
+      var goalArr = [];
+      data.forEach(function(user){
+        var userid = user.userId;
+        user.goals.forEach(function(goal){
+          var motivation = goal.motivation || 0;
+          goalArr.push([goal.content, userid, goal._id, motivation]);
+        })
+      });
+      console.log(goalArr);
+    $scope.data.goalsList = goalArr;
+    })
+  }
+
+  $scope.motivate = function(gid){
+    gid[3]++;
+    goalsService.addMotivate(gid);
+  };  
 	//Shows success dimmer flash and then deletes goal when the user clicks "I did it"
 
 	$scope.celebrateSuccess = function(event){

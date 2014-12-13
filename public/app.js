@@ -2,10 +2,12 @@
 *  Setup for app main and ui-router routes *
 *******************************************/
 
-angular.module('app', ['ui.router', 'app.signup', 'app.login', 'app.add', 'app.goals','app.logout',  'app.authFact',   'app.goalFact'])
+
+angular.module('app', ['ui.router', 'app.signup', 'app.login', 'app.add', 'app.goals', 'app.logout',  'app.authFact', 'app.goalFact'])
 .config(function($stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.otherwise("/login");
+
+  $urlRouterProvider.otherwise("/");
 
 	$stateProvider
   .state('addGoalState', {
@@ -37,7 +39,7 @@ angular.module('app', ['ui.router', 'app.signup', 'app.login', 'app.add', 'app.g
     }
   })
   .state('signupState', {
-    url:'/signup',
+    url: '/signup',
     views: {
       'authPane': {
         templateUrl: '/app/views/signupView.template.html',
@@ -45,5 +47,23 @@ angular.module('app', ['ui.router', 'app.signup', 'app.login', 'app.add', 'app.g
       }
     }
   })
-  
+  .state('allGoals', {
+    url: '/allgoals',
+    views: {
+      'allGoals': {
+        templateUrl: '/app/views/allGoals.template.html',
+        controller: 'goalsListController'
+      }
+    }
+  })
+  .state('root', {
+    url: '/',
+    views: {
+      'landingPage': {
+        templateUrl: '/app/views/root.template.html'
+      }
+    }
+  });
 });
+
+

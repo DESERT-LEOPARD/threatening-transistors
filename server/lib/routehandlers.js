@@ -6,7 +6,7 @@ var Goal = require('../models/goal.js')
 var db = require('../config.js');
 var Goal = require('../models/goal.js');
 var emailHandler = require('./emailHandler.js');
-var request = require('request')
+var request = require('request');
 
 
 
@@ -32,6 +32,7 @@ exports.logout = function (req, res) {
       req.logout();
       res.send('loggedOut')
   });
+
 };
 
 exports.getGoals = function (req, response) {
@@ -42,6 +43,28 @@ exports.getGoals = function (req, response) {
         console.log('err');
       }
     });
+};
+
+exports.getAllGoals = function (req, response) {
+  Goal.find().exec(function(err, result) {
+      if (!err) {
+
+        response.send(result);
+      } else {
+        console.log('err');
+      }
+    });
+};
+
+exports.addMotivate = function(req, response){
+  var goalData = req.body;
+  Goal.findOne({'userId': goalData[1]}, function(err, match){
+    if(!err){
+      console.log(match)
+    } else {
+      console.log(err);
+    }
+  });
 };
 
 exports.removeGoal = function (req, res) {
@@ -94,18 +117,15 @@ exports.payments = function (req, res) {
 }
 
 exports.schedulePay = function (req, res) {
-
   var amount = req.body.amount;
   var receiverId = req.body.receiverID;
   var date = req.body.date
-  console.log(date);
 
   var paymentReq = {"access_token": req.session.accessToken,
     user_id: receiverId,
     note: 'I did not meet my goal on time :(',
     amount: amount
   }
-
   var j = schedule.scheduleJob(date, function(){
     request.post(
       'https://api.venmo.com/v1/payments',
@@ -116,10 +136,8 @@ exports.schedulePay = function (req, res) {
         }
     });
   });
-
-res.send('payment scheduled');
+  res.send('payment scheduled');
 }
-
 
 exports.getFriends = function (req, res) {
   var requestURL = 'https://api.venmo.com/v1/users/' + req.session.venmoID + '/friends?access_token=' + req.session.accessToken + '&&limit=300';
@@ -139,6 +157,7 @@ exports.addGoal = function (req, res) {
   var goalData = req.body;
   var name = req.session.name;
   var email = req.session.email;
+  goalData.motivation = 0;
   //check to see if user is already in goal database (has already saved at least one goal)
   Goal.findOne({'userId': req.session.passport.user}, function(err, userGoalList){
 

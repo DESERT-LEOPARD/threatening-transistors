@@ -1,0 +1,55 @@
+<!-- start -->
+<div class="ui segment">
+	<div class="ui top left attached label">My current goals</div>
+	<div class="ui divided very relaxed animated list" ng-init="getAllGoals()">
+		<div class="item" ng-repeat="goal in data.goalsList">
+			<i class="big leaf icon"></i>
+			<div class="content">
+				<input type="hidden" class="hiddden goal-id" value="{{$index}}">
+        <a class="ui left aligned header">{{goal[0]}}</a>
+      </div>
+				<a class="ui right aligned header">Motivated by: {{goal[3]}} </a>
+  		<div class="ui buttons">
+  			<div class="ui button" ng-click="motivate(goal)">Motivate!</i></div>
+  		</div>
+    </div>
+	</div>
+</div>
+<!-- dimmer for celebrating success! -->
+<div class="ui dimmer success-dimmer">
+  <div class="content">
+    <div class="center">
+      <h2 class="ui inverted icon header">
+        <i class="child icon"></i>
+        You did it!
+      </h2>
+      <div>
+      	High fives all around!
+      </div>
+    </div>
+  </div>
+</div>
+<!-- dimmer for confirming goal deletion -->
+<div class="ui dimmer delete-goal-dimmer">
+  <div class="content">
+    <div class="center">
+      <h2 class="ui inverted icon header">
+        <i class="sun icon"></i>
+        Are you sure you want to delete this goal?
+      </h2>
+      <div class="actions">
+      	<div class="two fluid ui inverted buttons">
+			<div class="ui red basic inverted button" ng-click="closeConfirmDimmer()">
+			    <i class="remove icon"></i>
+			        No
+			</div>
+			<div class="ui green basic inverted button" ng-click="confirmedDelete()">
+			    <i class="checkmark icon"></i>
+			        Yes
+			</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end dimmer -->
+<!-- end -->

@@ -29,7 +29,26 @@ angular.module('app.goalFact', [])
 		});
 	};
 
-	var deleteGoal = function(goalID, callback){	
+  var getAllGoals = function(user){
+    console.log("gettin all yer goals");
+    return $http({
+      method: 'GET',
+      url: '/allGoals'
+    }).then(function(res){
+      return res.data;
+    });
+  };
+
+  var addMotivate = function(gid){
+    console.log('adding motivation..');
+    return $http({
+      method: 'POST',
+      url: '/addMotivate',
+      data: gid
+    });
+  };
+
+	var deleteGoal = function(goalID, callback){
 		console.log("deleting goal: " + goalID);
 		// delete payment schedule
 		return $http({
@@ -48,6 +67,8 @@ angular.module('app.goalFact', [])
 	return {
 		createGoal: createGoal,
 		getGoals: getGoals,
-		deleteGoal: deleteGoal
+    getAllGoals: getAllGoals,
+		deleteGoal: deleteGoal,
+    addMotivate: addMotivate
 	};
 });
