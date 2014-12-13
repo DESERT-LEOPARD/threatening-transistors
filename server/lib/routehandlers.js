@@ -60,7 +60,7 @@ exports.addMotivate = function(req, response){
   var goalData = req.body;
   Goal.findOne({'userId': goalData[1]}, function(err, match){
     if(!err){
-      console.log(match)
+      console.log('match',match);
     } else {
       console.log(err);
     }
