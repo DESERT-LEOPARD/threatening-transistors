@@ -98,8 +98,8 @@ var headers = {
 exports.payments = function (req, res) {
   request.post(
     'https://api.venmo.com/v1/oauth/access_token',
-    { form: {"client_id": 2195,
-    "client_secret": '4VUeNAwGEkbQWj8GywqYGBXygRBzWTrJ',
+    { form: {"client_id": 2249,
+    "client_secret": '7amDXDTBB2gRnpUJ9ee8jdByh8MqqLAg',
     "code": req.body.code
     } }, function (error, response, body) {
       if(error) {
